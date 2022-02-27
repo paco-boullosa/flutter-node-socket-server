@@ -24,8 +24,16 @@
         socket.emit('mensaje', { nombre: 'Fran' });
 
         // recibir un socket
-        socket.on('mensaje',( payload ) => {
-            console.log('Comunicacion', payload);
+        socket.on('nuevo-mensaje',( payload ) => {
+            console.log('Comunicacion: ', payload);
+        });
+
+        socket.on('bandas-activas',( payload ) => {
+            console.clear();
+            console.table(payload);
+            // payload.forEach(element => {
+            //     console.log(element.name);
+            // });
         });
 
     </script>
